@@ -1,0 +1,23 @@
+<html>
+  <head></head>
+  <body>
+    <input class="input-name" onkeydown="clickEnterButton(event)">
+
+    <button onclick="getResult()">Submit</button>
+    
+
+    <p class="js-result"></p>
+
+    <script>
+      function getResult(){
+        document.querySelector('.js-result').innerHTML = `Your name is: ${document.querySelector('.input-name').value}`
+      }
+      function clickEnterButton(event){
+        if (event.key === 'Enter'){
+          getResult()
+        }
+      }
+    </script>
+
+  </body>
+</html>
