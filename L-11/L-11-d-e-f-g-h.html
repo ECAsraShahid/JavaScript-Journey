@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+
+      for(let i = 0 ; i<=10 ; i+=2){           //d
+        console.log(i);
+      }
+
+
+      
+      for(let i = 5 ; i>=0 ; i--){           //e
+        console.log(i);
+      }
+
+
+      let i = 0 ;                         //f
+
+      while(i<=10){
+        console.log(i);
+        i+=2;
+      }
+
+      let j = 5 ;                         
+
+      while(j>=0){
+        console.log(j);
+        j--;
+      }
+
+      const array = [1,2,3];        //g
+      newArray = [];
+      let k=0;
+
+      while(k!=array.length){
+        newArray.push(array[k]+1);
+        k++;
+      }
+      console.log(newArray);
+
+
+      
+      function addOne(array){        //h
+        newArray=[]
+        let k=0;
+
+        while(k!=array.length){
+          newArray.push(array[k]+1);
+          k++;
+        }
+        console.log(newArray);
+      }
+      addOne([1,2,3]);
+      addOne([-2,-1,0,99]);
+
+    </script>
+  </body>
+</html>

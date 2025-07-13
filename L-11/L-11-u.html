@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+
+      function removeEgg(foods){
+        newArray = foods.slice();
+        newArray.reverse();
+        
+        
+        resultantArray=[];
+        count = 0;
+        
+        for(let i=0 ; i<foods.length ; i++){
+
+          if(newArray[i] === 'egg' && count <2){
+              count+=1;
+              continue;
+              
+          }
+          else{
+            resultantArray.push(newArray[i]);
+          }    
+        }
+
+        console.log(resultantArray.reverse());
+        console.log(foods);
+      
+      }
+      removeEgg(['egg' , 'apple' , 'egg' ,'egg' , 'ham']);
+    </script>
+  </body>
+</html>

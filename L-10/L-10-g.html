@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="L-10-d-e-f.css">
+  </head>
+  <body>
+    <button class="js-button1" onclick="action('.js-button1')">Gaming</button>
+    <button class="js-button2" onclick="action('.js-button2')">Music</button>
+    <button class="js-button3" onclick="action('.js-button3')">Tech</button>
+
+    <script>
+
+      function action(activeButton){
+        const button = document.querySelector(activeButton);
+        if(!button.classList.contains('is-toggled')){
+          checkRemainButton()
+          button.classList.add('is-toggled');
+        }
+        else{
+          button.classList.remove('is-toggled');
+        }
+      }
+
+      function checkRemainButton(){
+        const remainButton = document.querySelector('.is-toggled');
+        if(remainButton){
+          remainButton.classList.remove('is-toggled');
+        }
+      }
+    </script>
+
+
+  </body>
+</html>

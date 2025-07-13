@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+
+      function minMax(nums){           //l and m
+
+        const num = nums[0];
+        let minMax = {
+          'min' : null,
+          'max' : null
+        }
+
+        if(nums.length == 1){
+
+           minMax.min = nums[0];
+           minMax.max = nums[0];
+
+        }
+
+        else{
+
+          for(let i=1 ; i<nums.length ; i++){
+
+            if(nums[i] < num){
+              minMax.min = nums[i];
+            }
+
+            if(nums[i] > num){
+              minMax.max = nums[i];
+            }
+         }
+        }
+        
+        console.log(minMax);
+      }
+      
+      minMax([1,-3,5]);
+      minMax([-2]);
+
+
+      function countWords(words){            //n
+        let wordCount = {}
+        
+        for(let i=0 ; i<words.length ; i++){
+
+          if(wordCount[words[i]]){
+             wordCount[words[i]] +=1;
+          }
+          else{
+            wordCount[words[i]] = 1;
+          }
+        }
+        console.log(wordCount)
+      }
+
+      countWords(['apple','apple' , 'apple' , 'grape']);
+
+
+
+      //const array = ['hello', 'world' , 'search','good']; 
+      const array = ['not' , 'found'];                                      //o
+      //array1 for both o and p.
+      const array1 = ['hello', 'world' , 'search','good','search'];
+      const string = 'search';
+      let found = false;
+
+      for(let i=0 ; i<array.length ; i++){
+
+         if(array[i] === string){
+            console.log(i);
+            found=true;
+          }
+        }
+      
+      if(!found){
+        console.log(-1);
+      }
+
+
+
+
+      for(let i=0 ; i<array1.length ; i++){        //p
+
+         if(array1[i] === string){
+            console.log(i);
+            found=true;
+            break;
+          }
+        }
+      
+      if(!found){
+        console.log(-1);
+      }
+
+
+      
+      
+      function findIndex(array , word){            //q
+        let found = false;
+        for(let i=0 ; i<array.length ; i++){        
+
+          if(array[i] === word){
+            console.log(word);
+            console.log(i);
+            found=true;
+            break;
+          }
+        }
+      
+        if(!found){
+          console.log(-1);
+        }
+
+      }
+      
+      findIndex( ['green' , 'red' , 'blue' , 'red'] , 'red');
+      findIndex( ['green' , 'red' , 'blue' , 'red'] , 'yellow');
+
+    </script>
+  </body>
+</html>

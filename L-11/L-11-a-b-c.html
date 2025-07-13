@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      const nums = [10,20,30];      //a
+      nums[2] = 99;
+      console.log(nums);
+
+
+
+      function getLastValue(array){             //b
+        console.log(array[array.length-1]) ;
+      }
+      getLastValue([1,20,22,24,5]);
+      getLastValue(['hi','hello','good']);
+
+
+      function arraySwap(array){               //c
+        const firstElement = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = firstElement;
+        console.log(array);
+      }
+      arraySwap([1,20,22,24,5]);
+      arraySwap(['hi','hello','good']);
+
+
+
+      for(let i = 0 ; i<=10 ; i+=2){           //d
+        console.log(i);
+      }
+
+
+
+      for(let i = 5 ; i>=0 ; i++){           //e
+        console.log(i);
+      }
+
+
+      let i = 0 ;                         //f
+
+      while(i<=10){
+        console.log(i);
+        i+=2;
+      }
+
+      let j = 5 ;                         //g
+
+      while(j>=0){
+        console.log(i);
+        j++;
+      }
+
+    </script>
+  </body>
+</html>

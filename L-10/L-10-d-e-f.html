@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="L-10-d-e-f.css">
+  </head>
+  <body>
+    <button class="js-button1" onclick="action('js-button1')">Gaming</button>
+    <button class="js-button2" onclick="action('js-button2')">Music</button>
+    <button class="js-button3" onclick="action('js-button3')">Tech</button>
+
+    <script src="L-10-d-e-f.js"></script>
+
+    <!--  ALTERNATIVE SOLUTION
+
+    <button class="toggle-button js-button" onclick="
+      const button = document.querySelector('.js-button');
+      if (!button.classList.contains('is-toggled')) {
+        button.classList.add('is-toggled');
+      } else {
+        button.classList.remove('is-toggled');
+      }
+    ">Gaming</button> 
+
+    -->
+
+  </body>
+</html>
