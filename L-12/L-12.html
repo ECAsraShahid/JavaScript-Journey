@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+
+    <button onclick="changeTextToFinish()" class="start-button-c">Start</button>
+    <button onclick="changeTextDouble()" class="start-button-d">Start</button>
+    <div>
+      <button onclick="addToCart()">Add to cart</button>
+      <p  class="js-processUpdate-1"></p>
+    </div>
+    <div>
+      <button onclick="addToCart2()">Add to cart</button>
+      <p class="js-processUpdate-2"></p>
+    </div>
+    <button onclick="addMessage()">Add</button>
+    <button onclick="removeMessage()">Remove</button>
+    
+    <script>
+      //a
+      const add = function (){
+        console.log(2+3);
+      }
+      add();
+      add();
+
+      //b
+      function runTwice(fun){
+        fun();
+        fun();
+      }
+      runTwice(function(){
+        console.log('12b');
+      });
+      runTwice(add);
+
+      //c
+      function changeTextToFinish(){
+        setTimeout(function(button){
+        //for ques d to work change c to d in queryselector
+        document.querySelector('.start-button-c').innerHTML = 'Finished!';
+        } , 1000);
+      }
+
+      //d
+      function changeTextDouble(){
+        document.querySelector('.start-button-d').innerHTML = 'Loading....!';
+        changeTextToFinish();
+      }
+      
+      //e
+      function addToCart(){
+        document.querySelector('.js-processUpdate-1').innerHTML = 'Added!';
+        setTimeout(function(){
+          document.querySelector('.js-processUpdate-1').innerHTML = ''
+        } , 2000);
+      }
+
+      //f
+      let id;
+      function addToCart2(){
+        document.querySelector('.js-processUpdate-2').innerHTML = 'Added!';
+        clearTimeout(id);
+        id = setTimeout(function(){
+          document.querySelector('.js-processUpdate-2').innerHTML = ''
+        } , 2000);
+      }
+
+      //g
+      setInterval(function(){
+        if(document.title === 'App'){
+          document.title = '(2) New Messages';
+        }
+        else{
+          document.title = 'App';
+        }
+        
+      } , 1000);
+
+      //h and i
+      let messages=2;
+      function addMessage(){
+        messages+=1;
+      }
+      function removeMessage(){
+        if(messages !== 0){
+          messages-=1
+        }
+        
+      }
+      setInterval(function(){
+        if(messages === 0){
+          document.title = 'App';
+        }
+        else{
+          if(document.title === 'App' ){
+          document.title = `(${messages}) New Messages`;
+        }
+        
+        else{ 
+          document.title = 'App';
+        }
+        }
+        
+      },1000);
+    </script>
+  </body>
+</html>
