@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+
+    <button class="start-button-c">Start</button>
+    <button class="start-button-d">Start</button>
+
+    <div>
+      <button class="add-to-cart-button">Add to cart</button>
+      <p  class="js-processUpdate-1 "></p>
+    </div>
+
+    <div>
+      <button class="add-to-cart-button2">Add to cart</button>
+      <p class="js-processUpdate-2"></p>
+    </div>
+
+    <button class="add-button">Add</button>
+    <button class="remove-button">Remove</button>
+    
+    <script>
+      //a
+      const add = function (){
+        console.log(2+3);
+      }
+      add();
+      add();
+
+      //b
+      function runTwice(fun){
+        fun();
+        fun();
+      }
+
+      runTwice(() =>  console.log('12b')
+      );
+      runTwice(add);
+
+      //c
+      function changeTextToFinish(){
+        setTimeout((button) => 
+        //for ques d to work change c to d in queryselector
+        document.querySelector('.start-button-c').innerHTML = 'Finished!'
+         , 1000);
+      }
+
+      const buttonElement = document.querySelector('.start-button-c');
+      buttonElement.addEventListener('click' , changeTextToFinish );
+
+      //d
+      function changeTextDouble(){
+        document.querySelector('.start-button-d').innerHTML = 'Loading....!';
+        changeTextToFinish();
+      }
+
+      const buttonElement4 = document.querySelector('.start-button-d');
+      buttonElement4.addEventListener('click' , changeTextDouble );
+
+      
+      //e
+      function addToCart(){
+        document.querySelector('.js-processUpdate-1').innerHTML = 'Added!';
+        setTimeout(() => document.querySelector('.js-processUpdate-1').innerHTML = ''
+         , 2000);
+      }
+
+      const buttonElement2 = document.querySelector('.add-to-cart-button');
+      buttonElement2.addEventListener('click' , addToCart );
+
+      //f
+      let id;
+      function addToCart2(){
+        document.querySelector('.js-processUpdate-2').innerHTML = 'Added!';
+        clearTimeout(id);
+        id = setTimeout(() => document.querySelector('.js-processUpdate-2').innerHTML = ''
+        , 2000);
+      }
+
+      const buttonElement5 = document.querySelector('.add-to-cart-button2');
+      buttonElement5.addEventListener('click' , addToCart2 );
+
+      //g
+      setInterval(() => {
+        if(document.title === 'App') document.title = '(2) New Messages';
+        
+        else document.title = 'App';
+        
+      } , 1000);
+
+      //h and i
+      /*let messages=2;
+      function addMessage(){
+        messages+=1;
+      }
+
+      const buttonElement6 = document.querySelector('.add-button');
+      buttonElement6.addEventListener('click' , addMessage );
+
+      function removeMessage(){
+        if(messages !== 0){
+          messages-=1
+        }
+        
+      }
+        
+      const buttonElement3 = document.querySelector('.remove-button');
+      buttonElement3.addEventListener('click' , removeMessage );
+
+      setInterval(() => {
+        if(messages === 0) document.title = 'App';
+        
+        else{
+          if(document.title === 'App' ) document.title = `(${messages}) New Messages`;
+        
+          else document.title = 'App';
+        
+        }
+        
+      },1000);*/
+    </script>
+  </body>
+</html>

@@ -10,7 +10,8 @@ else{
   console.log('Tom cruise');
 }
 
-
+const buttonElement = document.querySelector('.add-button');
+buttonElement.addEventListener('click' , () => addTodo());
 
 function addTodo(){
   
@@ -33,18 +34,14 @@ function addTodo(){
 function todoDisplay(){
   let html = '';
 
-  todoarray.forEach(function(value,index){
+  todoarray.forEach((value) => {
     const add =  
     `<div> ${value.name}</div>
 
     <div>${value.duedate}</div>
 
     <button class="delete-button"
-        onclick="
-          todoarray.splice(${index} , 1)
-          localStorage.setItem('todoArray' , JSON.stringify(todoarray));
-          todoDisplay(); 
-        ">
+        onclick="">
         Delete
     </button>
       `;
@@ -52,6 +49,14 @@ function todoDisplay(){
   })
   
   document.querySelector('.js-list').innerHTML = html;
+
+  document.querySelectorAll('.delete-button').forEach((value,index) => {
+    value.addEventListener('click' , () => {
+      todoarray.splice(index , 1)
+      localStorage.setItem('todoArray' , JSON.stringify(todoarray));
+      todoDisplay(); 
+    })
+  })
 }
 
 todoDisplay();
